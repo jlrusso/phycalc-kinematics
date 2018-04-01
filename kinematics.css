@@ -794,7 +794,7 @@ input[type="radio"] {
 .module-section {
   width: 100%;
   height: auto;
-  padding: 5px;
+  padding: 15px;
 }
 .module-box {
   width: 100%;
@@ -840,24 +840,23 @@ input[type="radio"] {
 }
 
 .module-img {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .module-img img {
-  border-radius: 5px;
+  border-radius: 4px;
   width: 100%;
-  height: 390px;
-	margin-bottom: 5px;
+  height: 370px;
 }
 .module-box:hover > .module {
   transform: rotateX(180deg);
 }
 #first-front,
 #first-back {
-  border-radius: 6px 6px 0 0;
+  border-radius: 4px 4px 0 0;
 }
 #last-front,
 #last-back {
-  border-radius: 0 0 6px 6px;
+  border-radius: 0 0 4px 4px;
 }
 /*--- End of Background Modules ---*/
 
@@ -1298,6 +1297,9 @@ button.accordion.active:after {
   .module-box {
     height: 55.25px;
   }
+	.module-img img {
+		height: 369px;
+	}
   .third-page-pics img {
     height: 210px;
   }
@@ -1372,8 +1374,7 @@ button.accordion.active:after {
 		padding: 0.5px 17px;
 	}
 	.module-section {
-		width: 80%;
-		margin: auto;
+		width: 100%;
 		height: auto;
 		padding-top: 15px;
 		padding-bottom: 0;
@@ -1382,26 +1383,29 @@ button.accordion.active:after {
 		height: 65px;
 	}
 	.module-img img {
+		width: 100%;
 		height: auto;
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 	}
 	#third-pics-panel {
-		padding-bottom: 0;
+		padding: 0;
 	}
 	#third-pics-row {
-		width: 85%;
+		width: 100%;
 		margin: auto;
 	}
 	.third-page-pics {
 		width: 100%;
 		height: auto;
+		padding: 0;
 		margin: 0 auto 20px !important;
 	}
 	.third-page-pics img {
+		width: 100%;
 		height: auto;
 	}
 	.img-caption {
-		font-size: 1.5rem;
+		font-size: 2rem;
     padding: 7px 5px 0 5px;
 	}
 	#practice-btns-container {
@@ -1455,7 +1459,7 @@ button.accordion.active:after {
 }
 @media screen and (max-width: 610px){
 	.img-caption p {
-		font-size: 1.4rem;
+		font-size: 1.7rem;
 	}
 	#practice-btns-container {
 		display: block;
@@ -1551,6 +1555,9 @@ button.accordion.active:after {
 	.close-modal-btn {
 		display: none;
 	}
+	.img-caption p {
+		font-size: 1.5rem;
+	}
 }
 
 @media screen and (max-width: 450px){
@@ -1583,6 +1590,9 @@ button.accordion.active:after {
 	.img-caption {
 		width: 92%;
 	}
+	.img-caption p {
+		font-size: 1.5rem;
+	}
 }
 @media screen and (max-width: 385px){
 	#solve-selector,
@@ -1595,7 +1605,7 @@ button.accordion.active:after {
 		width: 95%;
 	}
 	.img-caption p {
-		font-size: 1.2rem;
+		font-size: 1.35rem;
 	}
 	.modal-header h4 {
 		width: 100%;
