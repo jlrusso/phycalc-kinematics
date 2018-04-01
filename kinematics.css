@@ -577,7 +577,7 @@ input[type="radio"] {
 #solo-image {
   position: relative;
 }
-#solo-image > img {
+#solo-image > img:first-child {
 	height: 140px;
   border-radius: 4px;
   box-shadow: 0 0 10px #333;
@@ -687,7 +687,7 @@ input[type="radio"] {
   }
 }
 #street-light-img {
-	width:50px;
+	width:45px;
 	height:auto;
 	position:absolute;
 	top:50%;
@@ -895,6 +895,9 @@ input[type="radio"] {
 
 
 /*--- Practice btn ---*/
+#practice-btns-outer {
+	padding: 0 30px;
+}
 #practice-btns-container {
 	width: 65%;
 	margin: auto;
@@ -926,14 +929,18 @@ input[type="radio"] {
 /*--- End of Practice btn ---*/
 
 /*--- Start of Conversion Section ---*/
+	#conversion-outer {
+		padding: 0 15px;
+	}
   #conversion-container {
     position: relative;
     width: 550px;
     height: auto;
     margin: 20px auto 0;
     padding: 10px;
+		border: 2px solid var(--main-black-color);
     border-radius: 4px;
-    background-color: #333;
+    background-color: transparent;
     text-align: center;
   }
   #conversion-heading {
@@ -942,9 +949,10 @@ input[type="radio"] {
     margin: auto;
     margin-bottom: 10px;
     padding: 5px;
-    border-radius: 3px;
-    background-color: #F1C40F;
+    border-radius: 4px;
+    background-color: var(--main-black-color);
     font-size: 1.7rem;
+		color: var(--main-yellow-color);
   }
   .input-option-input {
     width: 100%;
@@ -956,27 +964,27 @@ input[type="radio"] {
     width: 100%;
 		max-height: 200px;
     padding: 8px;
-    border: 0;
-    background-color: #F1C40F;
-    color: #333;
+    border: 2px solid var(--main-black-color);
+		border-radius: 4px;
+    background-color: transparent;
+    color: var(--main-black-color);
     font-size: 1.5rem;
     font-weight: bold;
     outline: none;
   }
-
   .input-option-input input {
     width: 100%;
     padding: 9px;
     border-radius: 4px;
-    border: 2px solid #F1C40F;
-    color: #F1C40F;
-    background-color: #333;
+    border: 2px solid var(--main-black-color);
+    color: var(--main-black-color);
+    background-color: transparent;
     font-size: 1.4rem;
+		font-weight: bold;
     outline: none;
   }
-	#unit-converter {
-		background-color: var(--main-yellow-color);
-		border-radius: 4px;
+	.input-option-input input::placeholder {
+		color: var(--main-black-color);
 	}
 /*--- End of Conversion Section ---*/
 
@@ -1269,7 +1277,7 @@ button.accordion.active:after {
 		margin-top:35px;
 	}
 	#outer-image-container,
-	#solo-image > img {
+	#solo-image > img:first-child {
 		height: 120px;
 	}
 	#animation-btns-container {
@@ -1345,13 +1353,13 @@ button.accordion.active:after {
 		margin: 0 auto 20px;
 		height: auto;
 	}
-	#solo-image > img {
+	#solo-image > img:first-child {
 		width: 100%;
 		height: 180px;
 	}
 	#street-light-img {
 		width:60px;
-		height:auto;s
+		height:auto;
 	}
 	.car-icon img {
 		width: 50px;
@@ -1397,7 +1405,7 @@ button.accordion.active:after {
     padding: 7px 5px 0 5px;
 	}
 	#practice-btns-container {
-		width: 85%;
+		width: 100%;
     margin: auto;
 	}
 }
@@ -1411,9 +1419,6 @@ button.accordion.active:after {
 }
 
 @media screen and (max-width: 745px){
-	#practice-btns-container {
-		width: 95%;
-	}
 	.practice-btn {
 		font-size: 1.4rem;
 	}
@@ -1457,12 +1462,12 @@ button.accordion.active:after {
 		margin-bottom: 10px;
 	}
 	.practice-btn {
-		width: 95%;
+		width: 100%;
 		margin: 0 auto 10px;
 		font-size: 1.7rem;
 	}
 	#conversion-container {
-		width: 95.5%;
+		width: 100%;
 		margin: auto;
 	}
 }
@@ -1499,7 +1504,7 @@ button.accordion.active:after {
 		margin: 15px auto;
 	}
 	#outer-image-container,
-	#solo-image > img {
+	#solo-image > img:first-child {
 		height: 120px;
 	}
 	.car-icon img {
@@ -1555,7 +1560,7 @@ button.accordion.active:after {
 		margin-left: 5px;
 	}
 	#outer-image-container,
-	#solo-image > img {
+	#solo-image > img:first-child {
 		height: 100px;
 	}
 	#street-light-img {
@@ -1619,7 +1624,7 @@ button.accordion.active:after {
 		width: 83%;
 	}
 	#outer-image-container,
-	#solo-image > img {
+	#solo-image > img:first-child {
 		height: 90px;
 	}
 }
