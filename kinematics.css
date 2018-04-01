@@ -981,15 +981,24 @@ input[type="radio"] {
 /*--- End of Conversion Section ---*/
 
 /*--- Modal ---*/
+.modal {
+	background-color: rgba(0,0,0,0.7);
+}
 .modal-header h4 {
-  max-width: 200px;
+  width: 200px;
   margin:auto;
   background-color:var(--main-black-color);
   padding:5px;
   border-radius: 4px;
   color: var(--main-yellow-color);
 }
-
+.modal-content {
+	width: 535px;
+	margin: auto;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
 .modal-footer-btn {
   background-color: #F1C40F;
   box-shadow: 0 0 15px rgba(0,0,0,0.9);
@@ -1058,7 +1067,7 @@ button.accordion.active:after {
     overflow: hidden;
     transition: max-height 0.4s ease-out;
 }
-.modal-panel input[type="image"] {
+.modal-panel img {
 	display: block;
   width: 70%;
   height: auto;
@@ -1178,7 +1187,34 @@ button.accordion.active:after {
 	font-size: 1.5rem;
 	color: #F1C40F;
 }
-
+#calc-modal-footer {
+	display: none;
+}
+.close-modal-btn {
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: 45px;
+	transform: translateX(-50%);
+}
+.close-modal-btn .glyphicon-remove {
+	border: 2px solid var(--main-yellow-color);
+	font-size: 3rem;
+	font-weight: normal;
+	text-align: center;
+	color: var(--main-yellow-color);
+}
+.glyphicon-remove {
+	width: 100%;
+	margin: auto;
+	cursor: pointer;
+	background-color: transparent;
+	border: 2px solid var(--main-black-color);
+	font-size: 1.5rem;
+	color: var(--main-black-color);
+	text-align: center;
+	transition: 0.2s;
+}
 #calculator-tooltip {
 	opacity: 0;
 	text-align: center;
@@ -1366,7 +1402,7 @@ button.accordion.active:after {
 	}
 }
 @media screen and (max-width: 770px){
-	.modal-panel input[type="image"] {
+	.modal-panel img {
 		display: block;
 	  width: 60%;
 	  height: auto;
@@ -1405,7 +1441,7 @@ button.accordion.active:after {
 		width: 100%;
 		margin-left: 0;
 	}
-	.modal-panel input[type="image"] {
+	.modal-panel img {
 		display: block;
 	  width: 90%;
 	  height: auto;
@@ -1428,6 +1464,11 @@ button.accordion.active:after {
 	#conversion-container {
 		width: 95.5%;
 		margin: auto;
+	}
+}
+@media screen and (max-width: 565px){
+	.modal-content {
+		width: 100%;
 	}
 }
 
@@ -1499,25 +1540,11 @@ button.accordion.active:after {
 	.modal-content {
 		border-radius: 0;
 	}
-	#calculator-tooltip {
-		margin-top: 15px;
-	}
 	#calc-modal-footer {
-		display: none;
+		display: block;
 	}
 	.close-modal-btn {
-		display: block;
-		position: absolute;
-		left: 50%;
-		bottom: 45px;
-		transform: translateX(-50%);
-	}
-	.close-modal-btn .glyphicon-remove {
-		border: 2px solid var(--main-yellow-color);
-		font-size: 3rem;
-		font-weight: normal;
-		text-align: center;
-		color: var(--main-yellow-color);
+		display: none;
 	}
 }
 
@@ -1565,6 +1592,9 @@ button.accordion.active:after {
 	.img-caption p {
 		font-size: 1.2rem;
 	}
+	.modal-header h4 {
+		width: 100%;
+	}
   #bottom-pager li a {
     width: 100%;
     margin-bottom: 10px;
@@ -1572,11 +1602,15 @@ button.accordion.active:after {
 	#street-light-img {
 		right: 4px;
 	}
-	.modal-panel input[type="image"] {
+	.modal-panel img {
 		display: block;
 	  width: 100%;
 	  height: auto;
 	  margin: auto;
+	}
+	.calculator-whole button,
+	#sig-fig-field {
+		height: 35px;
 	}
 }
 @media screen and (max-width: 350px){
