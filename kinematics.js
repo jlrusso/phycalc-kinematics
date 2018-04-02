@@ -2,7 +2,16 @@ $(window).on('beforeunload', function() {
    $(window).scrollTop(0);
 });
 
+var calculatorBtn = document.getElementById("calculator-btn");
+calculatorBtn.setAttribute("data-toggle", "modal");
+calculatorBtn.setAttribute("data-target", "#calculator-modal");
+
 $(document).ready(function(){
+  $("#contact-btn").add("#vert-contact-btn").remove();
+  var $calcParentLi = $("#calculator-btn").parent("li");
+  $calcParentLi.before("<li><a href='#' id='examples-btn'>Examples</a></li>");
+  var $vertCalcParentLi = $("#vert-calculator-btn").parent("li");
+  $vertCalcParentLi.before("<li><a href='#' id='vert-examples-btn'>Examples</a></li>");
   $("#conversion-btn").click(function(){
     $("html, body").animate({
       scrollTop: $("#conversion-container").offset().top
@@ -61,7 +70,7 @@ window.addEventListener("load", function(){
 
 var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
 verticalSearchBtn = document.getElementById("vertical-search-btn"),
-searchContainer = document.getElementById("search-container"),
+searchSection = document.getElementById("search-section"),
 searchBar = document.getElementById("search-bar"),
 closeSearchBtn = document.getElementById("close-search-btn"),
 caseList = document.getElementById("search-case-list"),
@@ -74,12 +83,12 @@ closeSearchBtn.addEventListener("click", closeSearchContainer);
 
 
 function openSearchContainer(){
-	if(!searchContainer.classList.contains("active-search")){
-		searchContainer.classList.toggle("active-search");
+	if(!searchSection.classList.contains("active-search")){
+		searchSection.classList.toggle("active-search");
 		mainContent.style.marginTop = "30px";
 		searchBar.focus();
 	} else {
-		searchContainer.classList.remove("active-search");
+		searchSection.classList.remove("active-search");
 		caseList.classList.remove("show");
 		searchBar.value = "";
 		mainContent.style.marginTop = "0";
@@ -87,15 +96,15 @@ function openSearchContainer(){
 }
 
 function closeSearchContainer(){
-	if(searchContainer.classList.contains("active-search")){
-		searchContainer.classList.remove("active-search");
+	if(searchSection.classList.contains("active-search")){
+		searchSection.classList.remove("active-search");
 		caseList.classList.remove("show");
 		searchBar.value  = "";
 		mainContent.style.marginTop = "0";
 	}
 }
 
-var searchClosers = [searchContainer, mainContent];
+var searchClosers = [searchSection, mainContent];
 for(let i = 0; i < searchClosers.length; i++){
   searchClosers[i].addEventListener("click", function(e){
     if(!e.target.matches("#search-bar")){
