@@ -102,7 +102,7 @@ nav {
 	outline: none;
 }
 
-#search-container {
+#search-section {
 	position: absolute;
 	top: -100px;
 	width: 100%;
@@ -112,7 +112,7 @@ nav {
 	transition: 0.5s;
 	z-index: 1;
 }
-#search-container.active-search {
+#search-section.active-search {
 	top: 50px;
 }
 #search-form {
@@ -243,7 +243,7 @@ nav {
 	line-height: 45px;
 	padding: 3px 10px 0;
 }
-.hamburger {
+#hamburger-menu {
 	position: absolute;
 	top: 50%;
 	right: 0;
@@ -253,8 +253,8 @@ nav {
 	background-color: #F1C40F;
 	border-radius: 10px;
 }
-.hamburger:before,
-.hamburger:after {
+#hamburger-menu:before,
+#hamburger-menu:after {
 	content: "";
 	position: absolute;
 	width: 40px;
@@ -263,20 +263,20 @@ nav {
 	border-radius: 10px;
 	transition: 0.4s;
 }
-.hamburger:before {
+#hamburger-menu:before {
 	top: -10px;
 }
-.hamburger:after {
+#hamburger-menu:after {
 	top: 10px;
 }
-#icon.active .hamburger:before {
+#icon.active #hamburger-menu:before {
 	top: 0;
 	transform: rotate(45deg);
 }
-#icon.active .hamburger {
+#icon.active #hamburger-menu {
 	background-color: rgba(0,0,0,0);
 }
-#icon.active .hamburger:after {
+#icon.active #hamburger-menu:after {
 	top: 0;
 	transform: rotate(135deg);
 }
