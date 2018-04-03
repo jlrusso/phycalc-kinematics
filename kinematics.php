@@ -456,47 +456,9 @@
 					</div>
 				</div>
 
-				<!-- Conversion Table -->
-				<div id="conversion-outer">
-					<div id="conversion-container">
-						<div id="conversion-heading">Unit Conversions</div>
-						<div class="input-option-input">
-							<input type="number" id="unit-input-field" max="999" placeholder="(input)"/>
-							<select name="unitConversions" id="unit-converter">
-								<option value="mmToM" id="millimetersToCentimeters" selected>mm to cm</option>
-								<option value="mToMm" id="centimetersToMillimeters">cm to mm</option>
-								<option value="cmToM" id="centimetersToMeters">cm to m</option>
-								<option value="mtoCm" id="metersToCentimeters">m to cm</option>
-								<option value="mToKm" id="metersTokilometers">m to km</option>
-								<option value="kmToM" id="kilometersToMeters">km to m</option>
-								<option value="mToMi" id="metersToMiles">m to mi</option>
-								<option value="miToM" id="milesToMeters">mi to m</option>
-								<option value="mToMi" id="metersToMiles">m to mi</option>
-								<option value="kmToMi" id="kilometersToMiles">km to mi</option>
-								<option value="miToKm" id="milesToKilometers">mi to km</option>
-								<option value="ftToYds" id="feetToYards">ft to yds</option>
-								<option value="ydsToFt" id="yardsToFeet">yds to ft</option>
-								<option value="ftToM" id="feetToMeters">ft to m</option>
-								<option value="mToFt" id="metersToFeet">m to ft</option>
-								<option value="inToCm" id="inchesToCentimeters">in to cm</option>
-								<option value="cmToIn" id="centimetersToInches">cm to in</option>
-								<option value="mgToG" id="milligramsToGrams">mg to g</option>
-								<option value="gToMg" id="gramsToMilligrams">g to mg</option>
-								<option value="gToKg" id="gramsToKilograms">g to kg</option>
-								<option value="kgToG" id="kilogramsToGrams">kg to g</option>
-								<option value="lbsToKg" id="poundsToKilograms">lbs to kg</option>
-								<option value="kgToLbs" id="kilogramsToPounds">kg to lbs</option>
-								<option value="km2Tom2" id="kilometerSquaredToSquareMeters">km² to m²</option>
-								<option value="m2ToKm2" id="squareMetersToKilometersSquared">m² to km²</option>-->
-							</select>
-							<input type="text" id="unit-output-field" placeholder="(output)" disabled="disabled">
-						</div>
-					</div>
-				</div>
-
-
-				<!-- End of Conversion Table -->
-
+				<?php
+					include_once "conversion-calculator.php";
+				?>
 
 
 			<div class="row">
@@ -515,136 +477,12 @@
 							<h4 class="text-center">Calculator</h4>
 						</div>
 							<div class="modal-body">
-								<div class="calculator-whole">
-									<input type="text" id="input-field">
-									<div class="row">
-											<div class="col-half">
-													<div id="radians-container">
-															<button type="button" id="radians-btn">Radians</button>
-															<span id="radians-indicator"></span>
-													</div>
-											</div>
-											<div class="col-half">
-													<div id="degrees-container">
-															<button type="button" id="degrees-btn">Degrees</button>
-															<span id="degrees-indicator"></span>
-													</div>
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-fourth">
-													<button type="button" class="trig-btn">sin</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="trig-btn">cos</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="trig-btn">tan</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn pi-btn">&pi;</button>
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-fourth">
-													<button type="button" class="trig-btn">sin<sup>-1</sup></button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="trig-btn">cos<sup>-1</sup></button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="trig-btn">tan<sup>-1</sup></button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">/</button>
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">7</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">8</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">9</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn"><b>*</b></button>
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">4</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">5</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">6</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">-</button>
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">1</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">2</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">3</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">+</button>
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">0</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn"><b>.</b></button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" id="square-btn">x<sup>2</sup></button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" id="nth-power">x<sup>n</sup></button>
-											</div>
-									</div>
-									 <div class="row">
-											<div class="col-fourth">
-													<button type="button" id="square-root-btn">&radic;</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">(</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" class="reg-btn">)</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" id="ten-power">EE</button>
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-fourth">
-													<button type="button" id="calculator-calculate-btn">=</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" id="calculator-clear-btn">Clear</button>
-											</div>
-											<div class="col-fourth">
-													<button type="button" id="delete-btn">Del</button>
-											</div>
-											<div class="col-fourth">
-													<input type="number" id="sig-fig-field" placeholder="#"/>
-											</div>
-									</div>
-							</div>
-									<div id="calculator-tooltip"></div>
+
+								<?php
+									include_once "calculator.php";
+								?>
+
+								<div id="calculator-tooltip"></div>
 							</div>
 						<div class="modal-footer text-center" id="calc-modal-footer">
 							<button type="button" class="btn glyphicon glyphicon-remove" data-dismiss="modal"></button>
