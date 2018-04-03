@@ -1046,10 +1046,10 @@ input[type="radio"] {
   border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	transition: 0.4s;
-	-webkit-transition: 0.4s;
-	-moz-transition: 0.4s;
-	-o-transition: 0.4s;
+	transition: 0.2s;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-o-transition: 0.2s;
 }
 .third-page-pics:hover img {
 	box-shadow: 0 0 10px var(--main-black-color);
@@ -1168,7 +1168,7 @@ input[type="radio"] {
   #unit-converter {
     width: 100%;
 		max-height: 200px;
-    padding: 8px;
+    padding: 9px;
     border: 2px solid var(--main-black-color);
 		border-radius: 4px;
 		-webkit-border-radius: 4px;
@@ -1188,7 +1188,7 @@ input[type="radio"] {
     border: 2px solid var(--main-black-color);
     color: var(--main-black-color);
     background-color: transparent;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 		font-weight: bold;
     outline: none;
   }
