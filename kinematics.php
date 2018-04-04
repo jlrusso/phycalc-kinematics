@@ -295,14 +295,10 @@
 
 			<div class="line-divider"></div>
 
-			<div class="row text-center" id="practice-btns-outer">
-				<div class="text-center" id="practice-btns-container">
-					<button type="button" class="practice-btn" data-toggle="modal" data-target="#my-modal-one">Example 1</button>
-					<button type="button" class="practice-btn" data-toggle="modal" data-target="#my-modal-two">Example 2</button>
-					<button type="button" class="practice-btn" data-toggle="modal" data-target="#my-modal-three">Example 3</button>
-				</div>
-			</div>
-
+			<?php
+				include_once "practice.php";
+				include_once "conversion-calculator.php";
+			?>
 
 				<div class="modal fade example-modal" id="my-modal-one" role="dialog">
 					<div class="modal-dialog">
@@ -455,11 +451,6 @@
 						</div>
 					</div>
 				</div>
-
-				<?php
-					include_once "conversion-calculator.php";
-				?>
-
 
 			<div class="row">
 				<ul class="pager">
