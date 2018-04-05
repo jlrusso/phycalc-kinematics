@@ -20,6 +20,7 @@ degreesBtn.addEventListener('click', degreesMode);
 calculateBtn.addEventListener('click', calculateInput);
 clearBtn.addEventListener('click', clearInputs);
 deleteBtn.addEventListener('click', deleteInput);
+
 //enable multiplication of input value by 10 to the nth power
 function tenToTheNthPower(){
   inputField.value += "*(10^";
@@ -74,12 +75,15 @@ function addToField(){
     inputField.value += this.textContent;
   }
 }
-//square the current value inside input field
 function squareValue(){
   inputField.value += "^2";
 }
 function squareRoot(){
-  inputField.value += "(√";
+  if(inputField.value.indexOf("=") > -1){
+    inputField.value = "(√";
+  } else {
+    inputField.value += "(√";
+  }
 }
 function toNthPower(){
   inputField.value += "^";
@@ -96,76 +100,88 @@ var trigs = ["sin(", "cos(", "tan(", "sin-1(", "cos-1(", "tan-1("],
     degTrigs = ["Math.sin((Math.PI/180)*", "Math.cos((Math.PI/180)*", "Math.tan((Math.PI/180)*", "(180/Math.PI)*Math.asin(", "(180/Math.PI)*Math.acos(", "(180/Math.PI)*Math.atan"],
     radTrigs = ["Math.sin(", "Math.cos(", "Math.tan(", "Math.asin(", "Math.acos(", "Math.atan("];
 //evaluate the expression inside input field
-function calculateInput(){
-  //change pi symbol to number value before evaluating
+
+function checkForPi(){
   while (inputField.value.indexOf('π') > -1){
     inputField.value = inputField.value.replace('π', Math.PI);
   }
+}
+
+function checkForExponents(){
   if (inputField.value.indexOf('^2') > -1){
     inputField.value = inputField.value.replace('^2', "**2");
   } else if (inputField.value.indexOf('^') > -1){
     inputField.value = inputField.value.replace('^', "**");
-    //evaluate square root if root symbol and parentheses around it are present
-  } else if (inputField.value.indexOf('(√') > -1) {
-    while (inputField.value.indexOf('(√') > -1){
-      inputField.value = inputField.value.replace('(√', 'Math.sqrt(');
-    }
   }
-  var postTrigValue = inputField.value.substring( inputField.value.indexOf('(') + 1, inputField.value.length);
-  //change from default radians to degrees mode
-    if(degrees === "Yes"){
-      //change all trig functions in input field to functional ones: Math.trig();
-      for(let i = 0; i < trigs.length; i++){
-       if(inputField.value.indexOf(trigs[i]) > -1){
-         while (inputField.value.indexOf(trigs[i]) > -1){
-           inputField.value = inputField.value.replace(trigs[i], tempTrigs[i]);
-         }
-         inputField.value = inputField.value.replace(tempTrigs[i], degTrigs[i]);
-       }
-      }
-
-      //if input field has an = sign, then clear input field before anything else
-      if(inputField.value.indexOf("=") > -1){
-        alert(inputField.value);
-        inputField.value = "";
-      }
-      //block below changes value precision based on value length
-      else if(inputField.value.toString().length > 11){
-        inputField.value = "= " + eval(inputField.value).toPrecision(sigFigField.value || 11);
-      } else {
-        inputField.value = "= " + eval(inputField.value).toPrecision(sigFigField.value || inputField.value.toString().length);
-      }
-    } else { //if radians === "Yes" and degrees === "No"
-        switch(true){
-          case (inputField.value.indexOf('=') > -1):
-            alert(inputField.value);
-            inputField.value = "";
-          break;
-        }
-        for(let i = 0; i < trigs.length; i++){
-          while (inputField.value.indexOf(trigs[i]) > -1){
-            inputField.value = inputField.value.replace(trigs[i], tempTrigs[i]);
-          }
-          inputField.value = inputField.value.replace(tempTrigs[i], radTrigs[i]);
-        }
-        if(inputField.value.toString().length > 11){
-          inputField.value = "= " + eval(inputField.value).toPrecision(sigFigField.value || 11);
-        } else {
-            inputField.value = "= " + eval(inputField.value).toPrecision(sigFigField || inputField.value.toString().length);
-        }
-    }
-    sigFigField.value = "";
 }
-//clear input field
+function checkForSquareroot(){
+  while (inputField.value.indexOf('(√') > -1){
+    inputField.value = inputField.value.replace('(√', 'Math.sqrt(');
+  }
+}
+
+function modifyTrigsDeg(){
+  for(let i = 0; i < trigs.length; i++){
+   if(inputField.value.indexOf(trigs[i]) > -1){
+     while (inputField.value.indexOf(trigs[i]) > -1){
+       inputField.value = inputField.value.replace(trigs[i], tempTrigs[i]);
+     }
+     inputField.value = inputField.value.replace(tempTrigs[i], degTrigs[i]);
+   }
+  }
+}
+
+function modifyTrigsRad(){
+  for(let i = 0; i < trigs.length; i++){
+    while (inputField.value.indexOf(trigs[i]) > -1){
+      inputField.value = inputField.value.replace(trigs[i], tempTrigs[i]);
+    }
+    inputField.value = inputField.value.replace(tempTrigs[i], radTrigs[i]);
+  }
+}
+
+function checkForEquals(){
+  if(inputField.value.indexOf("=") > -1){
+    alert(inputField.value);
+    inputField.value = "";
+  }
+}
+
+function determineSigFigs(){
+  if(inputField.value.toString().length > 11){
+    inputField.value = "= " + eval(inputField.value).toPrecision(sigFigField.value || 11);
+  } else {
+    inputField.value = "= " + eval(inputField.value).toPrecision(sigFigField.value || inputField.value.toString().length);
+  }
+}
+
+function calculateInput(){
+  checkForPi();
+  checkForExponents();
+  checkForSquareroot();
+
+  if(degrees === "Yes"){
+    checkForEquals();
+    modifyTrigsDeg();
+    determineSigFigs();
+  } else {
+    checkForEquals();
+    modifyTrigsRad();
+    determineSigFigs();
+  }
+}
+
 function clearInputs(){
   inputField.value = "";
   sigFigField.value = "";
-}		//deletes one input character at a time
+}
+
 function deleteInput(){
   var valMinusOne = inputField.value.slice(0, -1);
   inputField.value = valMinusOne;
 }
-/*--- Show Tool on some Calculator Btn mouseover ---*/
+
+/*-- Show Tooltip on Btn Mouseover --*/
 var calculatorTooltip = document.getElementById("calculator-tooltip");
 calculatorTooltip.textContent = " ";
 var piBtns = document.getElementsByClassName("pi-btn");
