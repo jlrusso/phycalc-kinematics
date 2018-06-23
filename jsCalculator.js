@@ -8,7 +8,7 @@ var inputField = document.getElementById('input-field'),
     calculateBtn = document.getElementById('calculator-calculate-btn'),
     clearBtn = document.getElementById('calculator-clear-btn'),
     deleteBtn = document.getElementById('delete-btn'),
-    sigFigField = document.getElementById("sig-fig-field");
+    calcSF = document.getElementById("sig-fig-field");
 
 inputField.addEventListener('keydown', keyPush);
 squareBtn.addEventListener('click',squareValue);
@@ -149,9 +149,9 @@ function checkForEquals(){
 
 function determineSigFigs(){
   if(inputField.value.toString().length > 11){
-    inputField.value = "= " + eval(inputField.value).toPrecision(sigFigField.value || 11);
+    inputField.value = "= " + eval(inputField.value).toPrecision(calcSF.value || 11);
   } else {
-    inputField.value = "= " + eval(inputField.value).toPrecision(sigFigField.value || inputField.value.toString().length);
+    inputField.value = "= " + eval(inputField.value).toPrecision(calcSF.value || inputField.value.toString().length);
   }
 }
 
@@ -173,7 +173,7 @@ function calculateInput(){
 
 function clearInputs(){
   inputField.value = "";
-  sigFigField.value = "";
+  calcSF.value = "";
 }
 
 function deleteInput(){
@@ -225,11 +225,11 @@ tenPowerBtn.addEventListener("mouseout", function(){
   calculatorTooltip.style.display = "none";
 })
 
-var sigFigField = document.getElementById("sig-fig-field");
-sigFigField.addEventListener("mouseover", function(){
+var calcSF = document.getElementById("sig-fig-field");
+calcSF.addEventListener("mouseover", function(){
   calculatorTooltip.textContent = "# of significant digits";
   calculatorTooltip.style.display = "block";
 })
-sigFigField.addEventListener("mouseout", function(){
+calcSF.addEventListener("mouseout", function(){
   calculatorTooltip.style.display = "none";
 })
