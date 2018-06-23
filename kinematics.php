@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PhyCalc | Kinematics</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="description" content="Here, we cover the aspects of kinematics: velocity, acceleration, position, time, and enable you to solve your own practice problems">
+	<title>IP | Kinematics</title>
+	<link rel="shortcut icon" href="/img/ip-logo.ico" type="image/ico">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
@@ -14,7 +16,7 @@
 <body>
 
 	<?php
-		include_once "navSearch.php";
+		include_once "nav-template.php";
 	?>
 
 	<section id="main-content">
@@ -22,7 +24,7 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<h2 class="animated bounceInDown section-heading">Kinematics: Big Five</h2>
-					<div class="pages-nav" id="top-pager">
+					<div class="pages-nav animated bounceInDown" id="top-pager">
 						<ul class="pager">
 							<li><a href="acceleration.php" class="prev-page-btn"><span class="glyphicon glyphicon-chevron-left"></span>Previous: Acceleration</a></li>
 							<li><a href="circularMotion.php" class="next-page-btn">Next: Circular Motion<span class="glyphicon glyphicon-chevron-right"></span></a></li>
@@ -190,11 +192,11 @@
 									</div>
 									<div id="outer-image-container">
 										<div id="inner-image-container">
-											<img src="../img/bigFiveOne.png" class="img-responsive slide" alt="d = (v)(t)"/>
-											<img src="../img/bigFiveTwo.png" class="img-responsive slide" alt="Cos Equation"/>
-											<img src="../img/bigFiveThree.png" class="img-responsive slide" alt="Tan Equation"/>
-											<img src="../img/bigFiveFour.png" class="img-responsive slide" alt="Inv Sin Equation"/>
-											<img src="../img/bigFiveFive.png" class="img-responsive slide" alt="Inv Cos Equation"/>
+											<img src="img/bigFiveOne.PNG" class="img-responsive slide" alt="d = (v)(t)"/>
+											<img src="img/bigFiveTwo.PNG" class="img-responsive slide" alt="Cos Equation"/>
+											<img src="img/bigFiveThree.PNG" class="img-responsive slide" alt="Tan Equation"/>
+											<img src="img/bigFiveFour.PNG" class="img-responsive slide" alt="Inv Sin Equation"/>
+											<img src="img/bigFiveFive.PNG" class="img-responsive slide" alt="Inv Cos Equation"/>
 										</div>
 										<div id="slide-bar-indicators">
 											<div class="slide-bar"></div>
@@ -210,11 +212,11 @@
 										<div class="animate-car-btn"><b>V &darr; &amp; a &darr;</b></div>
 									</div>
 									<div id="solo-image">
-										<img src="img/equationImageTemplate.png" class="img-responsive" alt="Trig Triangle"/>
-										<div class="car-icon" id="car-icon-one"><img src="../img/automobile.png" alt="Car"></div>
-										<div class="car-icon" id="car-icon-two"><img src="../img/automobile.png" alt="Car"></div>
-										<div class="car-icon" id="car-icon-three"><img src="../img/automobile.png" alt="Car"></div>
-										<img src="img/streetlight.png" id="street-light-img"/>
+										<img src="img/equationImageTemplate.PNG" class="img-responsive" alt="Trig Triangle"/>
+										<div class="car-icon" id="car-icon-one"><img src="../img/automobile.PNG" alt="Car"></div>
+										<div class="car-icon" id="car-icon-two"><img src="../img/automobile.PNG" alt="Car"></div>
+										<div class="car-icon" id="car-icon-three"><img src="../img/automobile.PNG" alt="Car"></div>
+										<img src="img/streetlight.PNG" id="street-light-img"/>
 									</div>
 								</div>
 							</div>
@@ -260,7 +262,7 @@
 								</div>
 							</div>
 							<div class="module-img">
-								<img src="../img/bigFiveModuleImage.png" class="img-responsive" alt="Big Five Equations">
+								<img src="../img/bigFiveModuleImage.PNG" class="img-responsive" alt="Big Five Equations">
 							</div>
 						</div>
 					</div>
@@ -313,10 +315,6 @@
 											A baseball is thrown from ground level with an initial velocity of 100 m/s at an angle of  25 degrees from the horizontal. How long was the ball in the air for and how far did it travel?
 										</p>
 									</div>
-									<button class="accordion"><strong>Illustration</strong></button>
-									<div class="modal-panel">
-										<img src="img/kinematicsAccordionImg1.png" alt="Angle Throw" class="img-responsive"/>
-									</div>
 									<button class="accordion"><strong>Given Variables</strong></button>
 									<div class="modal-panel">
 										<p>
@@ -329,6 +327,10 @@
 												<li><b>Final Velocity</b> : 0 m/s because ball comes to a stop</li>
 											</ul>
 										</p>
+									</div>
+									<button class="accordion"><strong>Illustration</strong></button>
+									<div class="modal-panel">
+										<img src="img/kinematicsAccordionImg1.PNG" alt="Angle Throw" class="img-responsive"/>
 									</div>
 									<button class="accordion last-accordion"><strong>Solution</strong></button>
 									<div class="modal-panel">
@@ -363,10 +365,6 @@
 											A soccer ball is kicked from the edge of a cliff that is of unknown height with an initial speed of 13 m/s. If it hits the ground 6 seconds later, how high is the cliff and how far from the cliff does the ball land?
 										</p>
 									</div>
-									<button class="accordion"><strong>Illustration</strong></button>
-									<div class="modal-panel">
-										<img src="img/kinematicsAccordionImg2.png" alt="Cliff kick ball"  class="img-responsive"/>
-									</div>
 									<button class="accordion"><strong>Given Variables</strong></button>
 									<div class="modal-panel">
 										<p>
@@ -378,6 +376,10 @@
 												<li><b>Final Position</b> : X-final = V(x)-initial * t</li>
 											</ul>
 										</p>
+									</div>
+									<button class="accordion"><strong>Illustration</strong></button>
+									<div class="modal-panel">
+										<img src="img/kinematicsAccordionImg2.PNG" alt="Cliff kick ball"  class="img-responsive"/>
 									</div>
 									<button class="accordion last-accordion"><strong>Solution</strong></button>
 									<div class="modal-panel">
@@ -415,12 +417,6 @@
 											A kickball is kicked from the ground and travels in a parabolic path and hits the ground 5 seconds later. If the initial vertical speed was 25 m/s, how high did the ball travel?
 										</p>
 									</div>
-									<button class="accordion"><strong>Illustration</strong></button>
-									<div class="modal-panel">
-										<p>
-											<img src="img/kinematicsAccordionImg3.png" alt="Parabolic Path"  class="img-responsive"/>
-										</p>
-									</div>
 									<button class="accordion"><strong>Given Variables</strong></button>
 									<div class="modal-panel">
 										<p>
@@ -430,6 +426,10 @@
 												<li><b>Gravity on Earth</b> : - 9.8 m/s<sup>2</sup> (downward acceleration)</li>
 											</ul>
 										</p>
+									</div>
+									<button class="accordion"><strong>Illustration</strong></button>
+									<div class="modal-panel">
+										<img src="img/kinematicsAccordionImg3.PNG" alt="Parabolic Path"  class="img-responsive"/>
 									</div>
 									<button class="accordion last-accordion"><strong>Solution</strong></button>
 									<div class="modal-panel">
@@ -453,10 +453,14 @@
 				</div>
 
 			<div class="row">
-				<ul class="pager">
-					<li><a href="acceleration.php" class="prev-page-btn"><span class="glyphicon glyphicon-chevron-left"></span>Previous: Acceleration</a></li>
-					<li><a href="circularMotion.php" class="next-page-btn">Next: Circular Motion<span class="glyphicon glyphicon-chevron-right"></span></a></li>
-				</ul>
+				<div class="col-md-12">
+					<div class="pages-nav" id="bottom-pager">
+						<ul class="pager">
+							<li><a href="acceleration.php" class="prev-page-btn"><span class="glyphicon glyphicon-chevron-left"></span>Previous: Acceleration</a></li>
+							<li><a href="circularMotion.php" class="next-page-btn">Next: Circular Motion<span class="glyphicon glyphicon-chevron-right"></span></a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 	</section>
 
