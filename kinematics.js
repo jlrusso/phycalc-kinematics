@@ -12,6 +12,7 @@ $(document).ready(function(){
   $calcParentLi.before("<li><a href='#' id='examples-btn'>Examples</a></li>");
   var $vertCalcParentLi = $("#vert-calculator-btn").parent("li");
   $vertCalcParentLi.before("<li><a href='#' id='vert-examples-btn'>Examples</a></li>");
+
   $("#conversion-btn").click(function(){
     $("html, body").animate({
       scrollTop: $("#conversion-container").offset().top
@@ -543,8 +544,8 @@ function calculateFunction(){
 		case (givenFinalVelocity.checked && givenInitialVelocity.checked && givenAcceleration.checked && solveDisplacement.checked): {
 			displacementField.type = "text";
 			let tempDispValue = (0.5 * (Math.pow(finalVelocityField.value, 2) - Math.pow(initialVelocityField.value, 2))) / accelerationField.value;
-			if(tempDispValue.toString().length > 7){
-				displacementField.value = tempDispValue.toPrecision(7) + " " + (chosenUnit || " ");
+			if(tempDispValue.toString().length > 5){
+				displacementField.value = tempDispValue.toPrecision(5) + " " + (chosenUnit || " ");
 			} else {
 				displacementField.value = tempDispValue.toPrecision(tempDispValue.toString().length) + " " + (chosenUnit || " ");
 			}
@@ -554,8 +555,8 @@ function calculateFunction(){
 		case (givenFinalVelocity.checked && givenInitialVelocity.checked && givenDisplacement.checked && solveAcceleration.checked): {
 			accelerationField.type = "text";
 			let tempAccelerationValue = (0.5 * (Math.pow(finalVelocityField.value, 2) - Math.pow(initialVelocityField.value, 2))) / displacementField.value;
-			if(tempAccelerationValue.toString().length > 7){
-				accelerationField.value = tempAccelerationValue.toPrecision(7) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
+			if(tempAccelerationValue.toString().length > 5){
+				accelerationField.value = tempAccelerationValue.toPrecision(5) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			} else {
 				accelerationField.value = tempAccelerationValue.toPrecision(tempAccelerationValue.toString().length) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			}
@@ -565,8 +566,8 @@ function calculateFunction(){
 		case (givenFinalVelocity.checked && givenAcceleration.checked && givenDisplacement.checked && solveInitialVelocity.checked): {
 			initialVelocityField.type = "text";
 			let tempInitialVelocityValue = Math.sqrt(Math.pow(finalVelocityField.value, 2) - (2 * accelerationField.value * displacementField.value));
-			if(tempInitialVelocityValue.toString().length > 7){
-				initialVelocityField.value = tempInitialVelocityValue.toPrecision(7) + " " + (chosenUnit || " ");
+			if(tempInitialVelocityValue.toString().length > 5){
+				initialVelocityField.value = tempInitialVelocityValue.toPrecision(5) + " " + (chosenUnit || " ");
 			} else {
 				initialVelocityField.value = tempInitialVelocityValue.toPrecision(tempInitialVelocityValue.toString().length) + " " + (chosenUnit || " ");
 			}
@@ -576,8 +577,8 @@ function calculateFunction(){
 		case (givenInitialVelocity.checked && givenAcceleration.checked && givenDisplacement.checked && solveFinalVelocity.checked): {
 			finalVelocityField.type = "text";
 			let tempFinalVelocityValue = Math.pow(initialVelocityField.value, 2) + parseFloat(2 * accelerationField.value * displacementField.value);
-			if(tempFinalVelocityValue.toString().length > 7){
-				finalVelocityField.value = tempFinalVelocityValue.toPrecision(7) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
+			if(tempFinalVelocityValue.toString().length > 5){
+				finalVelocityField.value = tempFinalVelocityValue.toPrecision(5) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			} else {
 				finalVelocityField.value = tempFinalVelocityValue.toPrecision(tempFinalVelocityValue.toString().length) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			}
@@ -587,8 +588,8 @@ function calculateFunction(){
 		case (givenFinalPosition.checked && givenInitialPosition.checked && givenFinalVelocity.checked && givenTime.checked && solveAcceleration.checked): {
 			accelerationField.type = "text";
 			let tempAccelerationValue = 2 * (finalPositionField.value - initialPositionField.value - (finalVelocityField.value * timeField.value)) / Math.pow(timeField.value, 2);
-			if(tempAccelerationValue.toString().length > 7) {
-				accelerationField.value = tempAccelerationValue.toPrecision(7) + " " + (chosenUnit || " ") + (acclUnits || " ");
+			if(tempAccelerationValue.toString().length > 5) {
+				accelerationField.value = tempAccelerationValue.toPrecision(5) + " " + (chosenUnit || " ") + (acclUnits || " ");
 			} else {
 				accelerationField.value = tempAccelerationValue.toPrecision(tempAccelerationValue.toString().length) + " " + (chosenUnit || " ") + (acclUnits || " ");
 			}
@@ -598,8 +599,8 @@ function calculateFunction(){
 		case (givenFinalPosition.checked && givenInitialPosition.checked && givenFinalVelocity.checked && givenAcceleration.checked && solveTime.checked): {
 			timeField.type = "text";
 			let tempTimeValue = Math.sqrt(2 * (finalPositionField.value - initialPositionField.value - (finalVelocityField.value * timeField.value)) / accelerationField.value);
-			if(tempTimeValue.toString().length > 7){
-				timeField.value = tempTimeValue.toPrecision(7) + " " + (chosenTimeUnit || " ");
+			if(tempTimeValue.toString().length > 5){
+				timeField.value = tempTimeValue.toPrecision(5) + " " + (chosenTimeUnit || " ");
 			} else {
 				timeField.value = tempTimeValue.toPrecision(tempTimeValue.toString().length) + " " + (chosenTimeUnit || " ");
 			}
@@ -609,8 +610,8 @@ function calculateFunction(){
 		case (givenFinalPosition.checked && givenInitialPosition.checked && givenAcceleration.checked && givenTime.checked && solveFinalVelocity.checked): {
 			finalVelocityField.type = "text";
 			let tempFinalVelocityValue = (finalPositionField.value - initialPositionField.value + parseFloat(0.5 * accelerationField.value * Math.pow(timeField.value, 2))) / timeField.value;
-			if(tempFinalVelocityValue.toString().length > 7) {
-				finalVelocityField.value = tempFinalVelocityValue.toPrecision(7) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
+			if(tempFinalVelocityValue.toString().length > 5) {
+				finalVelocityField.value = tempFinalVelocityValue.toPrecision(5) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			} else {
 				finalVelocityField.value = tempFinalVelocityValue.toPrecision(tempFinalVelocityValue.toString().length) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			}
@@ -620,8 +621,8 @@ function calculateFunction(){
 		case (givenFinalPosition.checked && givenFinalVelocity.checked && givenAcceleration.checked && givenTime.checked && solveInitialPosition.checked): {
 			initialPositionField.type = "text";
 			let tempInitialPositionValue = finalPositionField.value - (finalVelocityField.value * timeField.value) + parseFloat(0.5 * accelerationField.value * Math.pow(timeField.value, 2));
-			if(tempInitialPositionValue.toString().length > 7){
-				initialPositionField.value = tempInitialPositionValue.toPrecision(7) + " " + (chosenUnit || " ");
+			if(tempInitialPositionValue.toString().length > 5){
+				initialPositionField.value = tempInitialPositionValue.toPrecision(5) + " " + (chosenUnit || " ");
 			} else {
 				initialPositionField.value = tempInitialPositionValue.toPrecision(tempInitialPositionValue.toString().length) + " " + (chosenUnit || " ");
 			}
@@ -631,8 +632,8 @@ function calculateFunction(){
 		case (givenInitialPosition.checked && givenFinalVelocity.checked && givenTime.checked && givenAcceleration.checked && solveFinalPosition.checked): {
 			finalPositionField.type = "text";
 			let tempFinalPositionValue = parseFloat(initialPositionField.value) + parseFloat(finalVelocityField.value * timeField.value) - (0.5 * accelerationField.value * Math.pow(timeField.value, 2));
-			if(tempFinalPositionValue.toString().length > 7){
-				finalPositionField.value = tempFinalPositionValue.toPrecision(7) + " " + (chosenUnit || " ");
+			if(tempFinalPositionValue.toString().length > 5){
+				finalPositionField.value = tempFinalPositionValue.toPrecision(5) + " " + (chosenUnit || " ");
 			} else {
 				finalPositionField.value = tempFinalPositionValue.toPrecision(tempFinalPositionValue.toString().length) + " " + (chosenUnit || " ");
 			}
@@ -642,8 +643,8 @@ function calculateFunction(){
 		case (givenFinalPosition.checked && givenInitialPosition.checked && givenInitialVelocity.checked && givenTime.checked && slveAcceleration.checked): {
 			accelerationField.type = "text";
 			let tempAccelerationValue = (2 * (finalPositionField.value - initialPositionField.value - (initialVelocityField.value * timeField.value))) / Math.sqrt(timeField.value, 2);
-			if(tempAccelerationValue.toString().length > 7){
-				accelerationField.value = tempAccelerationValue.toPrecision(7) + " " + (chosenUnit || " ") + (acclUnits || " ");
+			if(tempAccelerationValue.toString().length > 5){
+				accelerationField.value = tempAccelerationValue.toPrecision(5) + " " + (chosenUnit || " ") + (acclUnits || " ");
 			} else {
 				accelerationField.value = tempAccelerationValue.toPrecision(tempAccelerationValue.toString().length) + " " + (chosenUnit || " ") + (acclUnits || " ");
 			}
@@ -653,8 +654,8 @@ function calculateFunction(){
 		case (givenFinalPosition.checked && givenInitialPosition.checked && givenInitialVelocity.checked && givenAcceleration.checked && solveTime.checked): {
 			timeField.type = "text";
 			let tempTimeValue = Math.sqrt(2*(finalPositionField.value - initialPositionField.value - (initialVelocityField.value * timeField.value)) / accelerationField.value);
-			if(tempTimeValue.toString().length > 7){
-				timeField.value = tempTimeValue.toPrecision(7) + " " + chosenTimeUnit;
+			if(tempTimeValue.toString().length > 5){
+				timeField.value = tempTimeValue.toPrecision(5) + " " + chosenTimeUnit;
 			} else {
 				timeField.value = tempTimeValue.toPrecision(tempTimeValue.toString().length) + " " + chosenTimeUnit;
 			}
@@ -664,8 +665,8 @@ function calculateFunction(){
 		case (givenFinalPosition.checked && givenInitialVelocity.checked && givenTime.checked && givenAcceleration.checked && solveInitialPosition.checked): {
 			initialPositionField.type = "text";
 			let tempInitialPositionValue = finalPositionField.value - (initialVelocityField.value * timeField.value) - (0.5) * (accelerationField.value) * (Math.pow(timeField.value, 2));
-			if(tempInitialPositionValue.toString().length > 7){
-				initialPositionField.value = tempInitialPositionValue.toPrecision(7) + " " + chosenUnit;
+			if(tempInitialPositionValue.toString().length > 5){
+				initialPositionField.value = tempInitialPositionValue.toPrecision(5) + " " + chosenUnit;
 			} else {
 				initialPositionField.value = tempInitialPositionValue.toPrecision(tempInitialPositionValue.toString().length) + " " + chosenUnit;
 			}
@@ -675,8 +676,8 @@ function calculateFunction(){
 		case (givenFinalPosition.checked && givenInitialPosition.checked && givenTime.checked && givenAcceleration.checked && solveInitialVelocity.checked): {
 			initialVelocityField.type = "text";
 			let tempInitialVelocityValue = (finalPositionField.value - initialPositionField.value  - ((0.5) * (accelerationField.value * Math.pow(timeField.value, 2)))) / timeField.value;
-			if(tempInitialVelocityValue.toString().length > 7){
-				initialVelocityField.value = tempInitialVelocityValue.toPrecision(7) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
+			if(tempInitialVelocityValue.toString().length > 5){
+				initialVelocityField.value = tempInitialVelocityValue.toPrecision(5) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			} else {
 				initialVelocityField.value = tempInitialVelocityValue.toPrecision(tempInitialVelocityValue.toString().length) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			}
@@ -686,8 +687,8 @@ function calculateFunction(){
 		case (givenInitialPosition.checked && givenInitialVelocity.checked && givenTime.checked && givenAcceleration.checked && solveFinalPosition.checked): {
 			finalPositionField.type = "text";
 			let tempFinalPositionValue = parseFloat(initialPositionField.value) + parseFloat(initialVelocityField.value * timeField.value) + parseFloat(0.5 * accelerationField.value * (Math.pow(timeField.value, 2)));
-			if(tempFinalPositionValue.toString().length > 7){
-				finalPositionField.value = tempFinalPositionValue.toPrecision(7) + " " + (chosenUnit || " ");
+			if(tempFinalPositionValue.toString().length > 5){
+				finalPositionField.value = tempFinalPositionValue.toPrecision(5) + " " + (chosenUnit || " ");
 			} else {
 				finalPositionField.value = tempFinalPositionValue.toPrecision(tempFinalPositionValue.toString().length) + " " + (chosenUnit || " ");
 			}
@@ -697,8 +698,8 @@ function calculateFunction(){
 		case (givenFinalVelocity.checked && givenInitialVelocity.checked && givenAcceleration.checked && solveTime.checked): {
 			timeField.type = "text";
 			let tempTimeValue = (finalVelocityField.value - initialVelocityField.value) / accelerationField.value;
-			if(tempTimeValue.toString().length > 7){
-				timeField.value = tempTimeValue.toPrecision(7) + " " + chosenTimeUnit;
+			if(tempTimeValue.toString().length > 5){
+				timeField.value = tempTimeValue.toPrecision(5) + " " + chosenTimeUnit;
 			} else {
 				timeField.value = tempTimeValue.toPrecision(tempTimeValue.toString().length) + " " + chosenTimeUnit;
 			}
@@ -708,8 +709,8 @@ function calculateFunction(){
 		case (givenFinalVelocity.checked && givenInitialVelocity.checked && givenTime.checked && solveAcceleration.checked): {
 			accelerationField.type = "text";
 			let tempAccelerationValue = (finalVelocityField.value - initialVelocityField.value) / timeField.value;
-			if(tempAccelerationValue.toString().length > 7){
-				accelerationField.value = tempAccelerationValue.toPrecision(7) + " " + chosenUnit + acclUnits;
+			if(tempAccelerationValue.toString().length > 5){
+				accelerationField.value = tempAccelerationValue.toPrecision(5) + " " + chosenUnit + acclUnits;
 			} else {
 				accelerationField.value = tempAccelerationValue.toPrecision(tempAccelerationValue.toString().length) + " " + chosenUnit + acclUnits;
 			}
@@ -719,8 +720,8 @@ function calculateFunction(){
 		case (givenFinalVelocity.checked && givenAcceleration.checked && givenTime.checked && solveInitialVelocity.checked): {
 			initialVelocityField.type = "text";
 			let tempInitialVelocityValue = (finalVelocityField.value) - (accelerationField.value * timeField.value);
-			if(tempInitialVelocityValue.toString().length > 7){
-				initialVelocityField.value = tempInitialVelocityValue.toPrecision(7) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
+			if(tempInitialVelocityValue.toString().length > 5){
+				initialVelocityField.value = tempInitialVelocityValue.toPrecision(5) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			} else {
 				initialVelocityField.value = tempInitialVelocityValue.toPrecision(tempInitialVelocityValue.toString().length) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			}
@@ -730,8 +731,8 @@ function calculateFunction(){
 		case (givenInitialVelocity.checked && givenAcceleration.checked && givenTime.checked && solveFinalVelocity.checked): {
 			finalVelocityField.type = "text";
 			let tempFinalVelocityValue = parseFloat(initialVelocityField.value) + parseFloat(accelerationField.value * timeField.value);
-			if(tempFinalVelocityValue.toString().length > 7){
-				finalVelocityField.value = tempFinalVelocityValue.toPrecision(7) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
+			if(tempFinalVelocityValue.toString().length > 5){
+				finalVelocityField.value = tempFinalVelocityValue.toPrecision(5) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			} else {
 				finalVelocityField.value = tempFinalVelocityValue.toPrecision(tempFinalVelocityValue.toString().length) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			}
@@ -741,8 +742,8 @@ function calculateFunction(){
 		case (givenDisplacement.checked && givenTime.checked && solveVelocity.checked): {
 			velocityField.type = "text";
 			let tempVelocityValue = displacementField.value / timeField.value;
-			if(tempVelocityValue.toString().length > 7){
-				velocityField.value = tempVelocityValue.toPrecision(7) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
+			if(tempVelocityValue.toString().length > 5){
+				velocityField.value = tempVelocityValue.toPrecision(5) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			} else {
 				velocityField.value = tempVelocityValue.toPrecision(tempVelocityValue.toString().length) + " " + (chosenUnit || " ") + (perTimeUnit || " ");
 			}
@@ -752,8 +753,8 @@ function calculateFunction(){
 		case (givenDisplacement.checked && givenVelocity.checked && solveTime.checked): {
 			timeField.type = "text";
 			let tempTimeValue = displacementField.value / velocityField.value;
-			if(tempTimeValue.toString().length > 7){
-				timeField.value = tempTimeValue.toPrecision(7) + " " + (chosenTimeUnit || " ");
+			if(tempTimeValue.toString().length > 5){
+				timeField.value = tempTimeValue.toPrecision(5) + " " + (chosenTimeUnit || " ");
 			} else {
 				timeField.value = tempTimeValue.toPrecision(tempTimeValue.toString().length) + " " + (chosenTimeUnit || " ");
 			}
@@ -763,8 +764,8 @@ function calculateFunction(){
 		case (givenVelocity.checked && givenTime.checked && solveDisplacement.checked): {
 			displacementField.type = "text";
 			let tempDispValue = velocityField.value * timeField.value;
-			if(tempDispValue.toString().length > 7){
-				displacementField.value = tempDispValue.toPrecision(7) + " " + (chosenUnit || " ");
+			if(tempDispValue.toString().length > 5){
+				displacementField.value = tempDispValue.toPrecision(5) + " " + (chosenUnit || " ");
 			} else {
 				displacementField.value = tempDispValue.toPrecision(tempDispValue.toString().length) + " " + (chosenUnit || " ");
 			}
